@@ -1,0 +1,67 @@
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(248, 250, 252);
+}
+.logo-box > .logo{
+    width: 100px;
+    border-radius: 42px;
+}
+.logo img{
+    width: 100%;
+    mix-blend-mode:multiply;
+}
+.nav-element ul {
+    display: flex;
+}
+.nav-element ul li{
+    padding: 12px;
+    list-style-type: none;
+    font-size: 22px;
+}
+/* -------------------------------------------------------------- */
+    /* Search Bar Css */
+.search-bar-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.search-input input{
+    width: 400px;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius:12px;
+    text-align: center;
+}
+.search-btn{
+    margin: 0px 12px;
+}
+.search-btn button{
+    width: 100px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(243, 212, 153);
+}
+
+
+
+/* --------------------------------------------------------------- */
+    /* Cart Css */
+
+.foodcart-container{
+    width: 200px;
+    /* border: 1px solid rgb(94, 92, 92); */
+    padding: 10px;
+    background-color: rgb(245, 238, 238);
+}
+.foodcart-container > .food-img > img{
+    width: 100%;
+    height: 40vh;
+}
+
+.foodCart{
+    display: flex;
+    flex-wrap: wrap;
+}

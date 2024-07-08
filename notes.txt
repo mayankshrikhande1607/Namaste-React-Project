@@ -1,0 +1,19 @@
+Note:
+1 React CDN
+reactElement(object) => convert in HTML by Browser
+  ->> reactElement("tag","attribute in {}","Children") --> takes 3 arguments
+  const heading = React.createElement(
+    'h1',
+    {id:'head'},
+    [   // To add muliple siblings tag 
+        React.createElement('p',{},'Hello this is paragraph tag!!'),
+        React.createElement('p',{},'Hello this is Seconde paragraph tag hello!!')
+    ]
+  )
+
+  const headingElement = (    // Jsx element 
+    <h1>Simple jsx element code</h1>
+  )
+------------------------------------------------------------------------------  
+2 learn about parcel
+3 config drivin UI
