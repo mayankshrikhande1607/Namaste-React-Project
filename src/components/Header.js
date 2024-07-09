@@ -1,14 +1,21 @@
+import {Link} from "react-router-dom";
+import { LOGO_URL } from "../utils/constant/Constants";
+
 const Header = ()=>{
     return(
         <div>
             <div className="nav-container">
                 <div className="logo-box">
-                    <img className="logo" alt="logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/shopping-logo-design-template-3ae19dfa02513c0d6a288be7b6242bb0_screen.jpg?ts=1604496242" />
+                    <img className="logo" alt="logo" src={LOGO_URL} />
                 </div>
                 <div className="nav-element">
                     <ul>
-                        <li>Home</li>
-                        <li>About Us</li>
+                        <li>
+                           <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/about" >About Us</Link>
+                        </li>
                         <li>Contact Us</li>
                         <li>Cart</li>
                     </ul>

@@ -1,16 +1,18 @@
 import Searchbar from "./Searchbar";
 import Foodcart from "./Foodcart";
+import { PROD_URL } from "../utils/constant/Constants";
 import { useState, useEffect } from "react";
 
 const Body = () => {
     const [mockData, setmockData] = useState([])
     const [filterData,setfilterData]=useState([])
+    
     useEffect(() => {
         fetchData()
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch("https://fakestoreapi.com/products");
+        const data = await fetch(PROD_URL);
         const finalData = await data.json();
         setmockData(finalData)
         setfilterData(finalData)
