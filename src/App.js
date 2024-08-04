@@ -3,18 +3,23 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header"
 import Body from "./components/Body";
 import About from "./components/About";
+import AddtoCart from "./components/Addtocart";
 import Error from "./components/Error";
 import Productdetails from "./components/Productdetails";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
+import { Provider } from "react-redux";
+import appStore from "./utils/redux-store/appStore";
 
 
 const Headingcomponent = () => {
  // Arrow function 
     return(
-        <>
-            <Header />
-            <Outlet /> 
-        </>
+        <Provider store={appStore}>
+            <div>  
+                <Header />
+                <Outlet /> 
+            </div>
+        </Provider>
     )
 }
 
@@ -32,7 +37,10 @@ const router = createBrowserRouter([
         },
         {
             path:"/product/:ids",   /* for dynamin routing  */
-            element:<Productdetails />
+            element:<Productdetails />,
+        },{
+            path:"/cart",
+            element:<AddtoCart />
         }
     ],
     errorElement:<Error />

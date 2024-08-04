@@ -1,69 +1,27 @@
-.nav-container{
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(248, 250, 252);
-}
-.logo-box > .logo{
-    width: 100px;
-    border-radius: 42px;
-}
-.logo img{
-    width: 100%;
-    mix-blend-mode:multiply;
-}
-.nav-element ul {
-    display: flex;
-}
-.nav-element ul li{
-    padding: 12px;
-    list-style-type: none;
-    font-size: 22px;
-}
-/* -------------------------------------------------------------- */
-    /* Search Bar Css */
-.search-bar-container{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-.search-input input{
-    width: 400px;
-    padding: 12px;
-    font-size: 15px;
-    border: 1px solid black;
-    border-radius:12px;
-    text-align: center;
-}
-.search-btn{
-    margin: 0px 12px;
-}
-.search-btn button{
-    width: 100px;
-    padding: 12px;
-    border-radius: 12px;
-    border: none;
-    background-color: rgb(243, 212, 153);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-
-/* --------------------------------------------------------------- */
-    /* Cart Css */
-
+.header-container{
+    height: 16vh;
+}
+img{
+    mix-blend-mode: multiply;
+    width: 20%;
+}
+*:focus {
+    outline: none;
+}
 .foodcart-container{
+    margin: 22px;
     width: 200px;
-    /* border: 1px solid rgb(94, 92, 92); */
-    padding: 10px;
-    background-color: rgb(245, 238, 238);
+    background-color: rgba(204, 202, 202, 0.685);
+    border-radius: 12px;
+    box-shadow: 3px 6px 10px 4px #d3d0d0;
 }
-.foodcart-container > .food-img > img{
+.food-img img{
     width: 100%;
     height: 40vh;
-}
-
-.foodCart{
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .product-details-cantainer{
@@ -83,4 +41,44 @@
 }
 .product-details{
     width: 50%;
+}
+a{
+    text-decoration: none;
+   color:black;
+}
+.label-pramoted{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    position:absolute;
+}
+/* --------------------------------------------------------------------------- */
+/* Add to cart css */
+.cartcontainer{
+   width: 88%;
+}
+.cart-outer-container{
+    margin: auto;
+    width: 42%;
+}
+.cart-product-container{
+    margin: 12px;
+    display: flex;
+    width: 100%;
+}
+.cart-product-image{
+    width: 39%;
+}
+.cart-product-image > img{
+    width: 55%;
+}
+.Back-product-button{
+    background: #3fb93f;
+    padding: 2px;
+    color: white;
+    border-radius: 5px;
+    margin: 2px;
+    text-align: center;
+    width: 102px;
+    font-size: 12px;
 }

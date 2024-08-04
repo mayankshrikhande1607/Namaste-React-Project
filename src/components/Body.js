@@ -1,12 +1,16 @@
 import Searchbar from "./Searchbar";
-import Foodcart from "./Foodcart";
+import Foodcart, { Promotedfoodcart } from "./Foodcart";
 import { PROD_URL } from "../utils/constant/Constants";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [mockData, setmockData] = useState([])
-    const [filterData,setfilterData]=useState([])
-    
+    const [filterData, setfilterData] = useState([])
+
+    /** this is higher order component variable */
+    const Foodcardpramoted = Promotedfoodcart(Foodcart)
+
     useEffect(() => {
         fetchData()
     }, []);
@@ -17,8 +21,8 @@ const Body = () => {
         setmockData(finalData)
         setfilterData(finalData)
     }
-    const searchProduct =(data)=>{
-       const filterdata= mockData.filter((item)=>{
+    const searchProduct = (data) => {
+        const filterdata = mockData.filter((item) => {
             return item.category.toLowerCase().includes(data.toLowerCase())
         })
         setfilterData(filterdata)
@@ -27,9 +31,15 @@ const Body = () => {
     return (
         <>
             <Searchbar search={searchProduct} />
-            <div className="foodCart">
+            <div className="foodCart flex justify-around flex-wrap ">
                 {filterData.map((item) => {
-                    return (<Foodcart clothdata={item} />)
+                    return (
+                        <Link key={item.id} to={"/product/" + item.id}>
+                            {item.rating.rate > 3 ?
+                                <Foodcardpramoted clothdata={item} />
+                                : <Foodcart clothdata={item} />}
+                        </Link>
+                    )
                 })}
             </div>
         </>
